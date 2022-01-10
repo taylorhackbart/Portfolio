@@ -11,7 +11,7 @@
     "client": "cd client && npm run start",
     "seed": "node scripts/seedDB.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "cd client && gh-pages -d build",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
