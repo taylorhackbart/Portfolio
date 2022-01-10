@@ -1,0 +1,23 @@
+.home-form-input{
+  display: block;
+  margin: auto;
+  height: 100px;
+  width: auto;
+}
+.home-form-formbtn{
+  height: 30px;
+  width: auto;
+  display: block;
+  margin: auto;
+}
+.homepage-text{
+  text-align: center;
+}
+.response-text{
+  text-align: center;
+  margin-top: 2%;
+}
+.your-text-title{
+  text-align: center;
+  margin-top: 3%;
+}
