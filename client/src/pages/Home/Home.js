@@ -7,13 +7,14 @@ import step1 from "../../assets/step-1.svg";
 import step2 from "../../assets/step-2.svg";
 import step3 from "../../assets/step-3.svg";
 import step4 from "../../assets/step-4.svg";
-import trainer1 from "../../assets/trainer-1.jpg";
-import trainer2 from "../../assets/trainer-2.jpg";
-import trainer3 from "../../assets/trainer-3.jpg";
+import trainer1 from "../../assets/github.png";
+import trainer2 from "../../assets/instagram-logo.png";
+import trainer3 from "../../assets/linkedin-logo.png";
 import { send } from "emailjs-com";
 
 function HomePage() {
   const [state, setState] = useState({ example: "" });
+  const [sent, setSent] = useState(false)
   const [loading, setLoading] = useState(true);
   const [response, setResponse] = useState();
   const userID = process.env.USERID;
@@ -37,6 +38,11 @@ function HomePage() {
     )
       .then((response) => {
         console.log("SUCCESS!", response.status, response.text);
+        setToSend({from_name: "",
+        message: "",
+        reply_to: "",
+        phone_number: ""})
+        setSent(true)
       })
       .catch((err) => {
         console.log("FAILED...", err);
@@ -46,23 +52,7 @@ function HomePage() {
   const handleChange = (e) => {
     setToSend({ ...toSend, [e.target.name]: e.target.value });
   };
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setState({ ...state, [name]: value });
-  };
-  //Saves example to DB
-  const onSend = () => {
-    API.saveExample(state).then((res) => {
-      setState({ example: "" });
-      const id = res.data._id;
-      //Gets example from DB
-      API.getExample(id).then((res) => {
-        setResponse(res.data.example);
-        setLoading(false);
-      });
-    });
-  };
-
+ 
   return (
     <>
       <header>
@@ -97,37 +87,6 @@ function HomePage() {
             Policy Template.
           </p>
         </div>
-        {/* <form onSubmit={onSubmit}>
-  <input
-    type='text'
-    name='from_name'
-    placeholder='from name'
-    value={toSend.from_name}
-    onChange={handleChange}
-  />
-  <input
-    type='text'
-    name='message'
-    placeholder='Your message'
-    value={toSend.message}
-    onChange={handleChange}
-  />
-  <input
-    type='text'
-    name='reply_to'
-    placeholder='Your email'
-    value={toSend.reply_to}
-    onChange={handleChange}
-  />
-   <input
-    type='text'
-    name='phone_number'
-    placeholder='Your Phone Number'
-    value={toSend.phone}
-    onChange={handleChange}
-  />
-  <button type='submit'>Submit</button>
-</form> */}
         <div className="hero-form">
           <h3>Send Taylor a Message</h3>
           <p>Fill out this form and I will get back to you ASAP.</p>
@@ -136,7 +95,7 @@ function HomePage() {
             <input
               type="text"
               name="from_name"
-              placeholder="from name"
+              placeholder="John Doe"
               value={toSend.from_name}
               onChange={handleChange}
               id="name"
@@ -147,7 +106,7 @@ function HomePage() {
             <input
               type="text"
               name="reply_to"
-              placeholder="Your email"
+              placeholder="johndoe@gmail.com"
               value={toSend.reply_to}
               onChange={handleChange}
               id="email"
@@ -158,23 +117,28 @@ function HomePage() {
               pattern="[0-9]*"
               type="text"
               name="phone_number"
-              placeholder="Your Phone Number"
-              value={toSend.phone}
+              placeholder="xxx-xxx-xxxx"
+              value={toSend.phone_number}
               onChange={handleChange}
               id="phone"
               className="form-input"
             />
             <label for="message">Enter a message:</label>
-            <input
+            <textarea
               type="text"
               name="message"
-              placeholder="Your message"
+              placeholder="Message"
               value={toSend.message}
               onChange={handleChange}
               id="message"
               className="form-input"
             />
-            <button type="submit">Submit!</button>
+            <button type="submit">Send!</button>
+            {sent === true && (
+              <>
+               <p> Thank you for your message :) </p> 
+              </>
+            )}
           </form>
         </div>
       </section>
@@ -263,12 +227,15 @@ function HomePage() {
         </div>
         <div className="trainers">
           <article className="trainer text-left">
-            <img
+           <a href="https://github.com/taylorhackbart" target="_blank">
+           <img
               src={trainer1}
               alt="Arron Stephens in his workout clothes, ready to pump iron"
+              className="github-logo"
             />
+            </a>
             <div className="trainer-bio">
-              <h3 className="trainer-name">LinkedIn</h3>
+              <h3 className="trainer-name">GitHub</h3>
               <h4 className="trainer-role">Speed / Strength</h4>
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi
@@ -279,9 +246,11 @@ function HomePage() {
             </div>
           </article>
           <article className="trainer">
-            <img src={trainer2} alt="Joanna Gill cooling off after a workout" />
-            <div className="trainer-bio text-right">
-              <h3 className="trainer-name">GitHub</h3>
+            <a href="https://www.instagram.com/tayhackbart/?hl=en" target="_blank">
+            <img src={trainer2} alt="Joanna Gill cooling off after a workout"  className="logos"/>
+            </a>
+            <div className="trainer-bio">
+              <h3 className="trainer-name">Instagram</h3>
               <h4 className="trainer-role">Endurance</h4>
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi
@@ -294,12 +263,15 @@ function HomePage() {
 
           {/* <!-- third trainer bio --> */}
           <article className="trainer">
+           <a href="https://www.linkedin.com/in/taylorhackbart/" target="_blank">
             <img
               src={trainer3}
               alt="Harry Smith wearing a headband and lifting comically small pink weights"
+              className="logos"
             />
+            </a>
             <div className="trainer-bio text-left">
-              <h3 className="trainer-name">Harry "the Headband" Smith</h3>
+              <h3 className="trainer-name">LinkedIn</h3>
               <h4 className="trainer-role">Strength</h4>
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi
