@@ -14,7 +14,7 @@ import { send } from "emailjs-com";
 
 function HomePage() {
   const [state, setState] = useState({ example: "" });
-  const [sent, setSent] = useState(false)
+  const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(true);
   const [response, setResponse] = useState();
   const userID = process.env.USERID;
@@ -38,11 +38,13 @@ function HomePage() {
     )
       .then((response) => {
         console.log("SUCCESS!", response.status, response.text);
-        setToSend({from_name: "",
-        message: "",
-        reply_to: "",
-        phone_number: ""})
-        setSent(true)
+        setToSend({
+          from_name: "",
+          message: "",
+          reply_to: "",
+          phone_number: "",
+        });
+        setSent(true);
       })
       .catch((err) => {
         console.log("FAILED...", err);
@@ -52,7 +54,7 @@ function HomePage() {
   const handleChange = (e) => {
     setToSend({ ...toSend, [e.target.name]: e.target.value });
   };
- 
+
   return (
     <>
       <header>
@@ -80,18 +82,14 @@ function HomePage() {
         <div className="hero-cta">
           <h2>Who Is She?</h2>
           <p>
-            These terms require the use of arbitration Section 10.2 on an
-            individual basis to resolve disputes and also limit the remedies
-            available to you in the event of a dispute. These Terms of Use were
-            created with the help of the Terms Of Use Generator and the Privacy
-            Policy Template.
+            Taylor is a motivated self-starter who enjoys collaborating on projects with a team. She has her BS from The University of Oregon in General Science with an emphasis in Marine Biology and a minor in Biology. Taylor lived in Quintana Roo, Mexico after graduating from college in 2016 to help a research team collect data from coral reefs. While she still has a passion for oceanography, her interest piqued when she entered the coding world. Eventually, Taylor would like to combine her two passions and raise conservation awareness through the touch of a button.
           </p>
         </div>
         <div className="hero-form">
           <h3>Send Taylor a Message</h3>
           <p>Fill out this form and I will get back to you ASAP.</p>
           <form onSubmit={onSubmit}>
-            <label for="name">Enter full name:</label>
+            <label htmlFor="name">Enter full name:</label>
             <input
               type="text"
               name="from_name"
@@ -102,7 +100,7 @@ function HomePage() {
               className="form-input"
             />
 
-            <label for="email">Enter email address:</label>
+            <label htmlFor="email">Enter email address:</label>
             <input
               type="text"
               name="reply_to"
@@ -112,7 +110,7 @@ function HomePage() {
               id="email"
               className="form-input"
             />
-            <label for="phone_number">Enter a telephone number:</label>
+            <label htmlFor="phone_number">Enter a telephone number:</label>
             <input
               pattern="[0-9]*"
               type="text"
@@ -123,7 +121,7 @@ function HomePage() {
               id="phone"
               className="form-input"
             />
-            <label for="message">Enter a message:</label>
+            <label htmlFor="message">Enter a message:</label>
             <textarea
               type="text"
               name="message"
@@ -136,7 +134,7 @@ function HomePage() {
             <button type="submit">Send!</button>
             {sent === true && (
               <>
-               <p> Thank you for your message :) </p> 
+                <p> Thank you for your message :) </p>
               </>
             )}
           </form>
@@ -145,17 +143,15 @@ function HomePage() {
 
       <section id="what-we-do" className="intro">
         <div className="flex-row">
-          <h2 className="section-title primary-border">Snippets</h2>
+          <h2 className="section-title primary-border">Why Coding?</h2>
         </div>
         <div className="flex-row">
           <p>
-            butcher selfies chambray shabby chic gentrify readymade yr Echo Park
-            XOXO Tumblr normcore Banksy direct trade Blue Bottle chillwave you
-            probably haven't heard of them single-origin coffee Vice fanny pack
-            fixie Odd Future Austin fingerstache pickled twee synth Wes Anderson
-            Thundercats viral bitters flannel meggings narwhal Marfa Schlitz
-            sustainable Intelligentsia umami deep v craft
+            During the initial lock down in March 2020, Taylor needed something to consume her time. After working full time at a fine dining restaurant in Del Mar and volunteering at two oceanography sites, it was hard to sit still. As she explored remote job positions, she found various websites that allowed her to learn basic coding for free. Once she completed multiple programs and felt comfortable creating algorithms, she decided to take it to the next level and sign up for a Boot Camp through Denver University and received her Full Stack Web Developer certification in December 2020. 
           </p>
+          <p>
+            Since Taylor completed the Boot Camp, she has taken on a tutoring role through 2U Education and is holding the position of a Senior Tutor. She also works on various freelance projects in her down time and enjoys making her clients visions come to life.
+            </p>
         </div>
       </section>
       <section id="what-you-do" className="steps">
@@ -227,12 +223,12 @@ function HomePage() {
         </div>
         <div className="trainers">
           <article className="trainer text-left">
-           <a href="https://github.com/taylorhackbart" target="_blank">
-           <img
-              src={trainer1}
-              alt="Arron Stephens in his workout clothes, ready to pump iron"
-              className="github-logo"
-            />
+            <a href="https://github.com/taylorhackbart" target="_blank">
+              <img
+                src={trainer1}
+                alt="Arron Stephens in his workout clothes, ready to pump iron"
+                className="github-logo"
+              />
             </a>
             <div className="trainer-bio">
               <h3 className="trainer-name">GitHub</h3>
@@ -246,8 +242,15 @@ function HomePage() {
             </div>
           </article>
           <article className="trainer">
-            <a href="https://www.instagram.com/tayhackbart/?hl=en" target="_blank">
-            <img src={trainer2} alt="Joanna Gill cooling off after a workout"  className="logos"/>
+            <a
+              href="https://www.instagram.com/tayhackbart/?hl=en"
+              target="_blank"
+            >
+              <img
+                src={trainer2}
+                alt="Joanna Gill cooling off after a workout"
+                className="logos"
+              />
             </a>
             <div className="trainer-bio">
               <h3 className="trainer-name">Instagram</h3>
@@ -263,12 +266,15 @@ function HomePage() {
 
           {/* <!-- third trainer bio --> */}
           <article className="trainer">
-           <a href="https://www.linkedin.com/in/taylorhackbart/" target="_blank">
-            <img
-              src={trainer3}
-              alt="Harry Smith wearing a headband and lifting comically small pink weights"
-              className="logos"
-            />
+            <a
+              href="https://www.linkedin.com/in/taylorhackbart/"
+              target="_blank"
+            >
+              <img
+                src={trainer3}
+                alt="Harry Smith wearing a headband and lifting comically small pink weights"
+                className="logos"
+              />
             </a>
             <div className="trainer-bio text-left">
               <h3 className="trainer-name">LinkedIn</h3>
@@ -309,10 +315,10 @@ function HomePage() {
           <div className="contact-form">
             <h3>Contact Us</h3>
             <form>
-              <label for="contact-name">Your Name</label>
+              <label htmlFor="contact-name">Your Name</label>
               <input type="text" id="contact-name" placeholder="Your Name" />
 
-              <label for="contact-message">Message</label>
+              <label htmlFor="contact-message">Message</label>
               <textarea id="contact-message" placeholder="Message"></textarea>
 
               <button type="submit">Submit</button>
