@@ -59,7 +59,7 @@ function HomePage() {
     <>
       <header>
         <h1>
-          <a href="./index.html">Taylor Hackbart </a>
+          <a href="/Portfolio">Taylor Hackbart </a>
         </h1>
         <nav>
           <ul>

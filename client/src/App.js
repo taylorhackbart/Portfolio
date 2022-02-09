@@ -15,7 +15,7 @@ function App() {
         {/* <NavBar /> */}
           <div className="app-background">
             <Switch>
-              <Route exact path="/" component={HomePage} />
+              <Route exact path="/Portfolio" component={HomePage} />
               <Route path="*" component={NoMatch} />
             </Switch>
           </div>
