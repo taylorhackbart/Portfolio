@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "proxy": "http://localhost:3001/",
-  "homepage": "http://taylorhackbart.github.io/Portfolio",
+  "homepage": "http://taylorhackbart.github.io/Portfolio/client/build/",
   "dependencies": {
     "@emailjs/browser": "^3.3.1",
     "axios": "^0.21.4",
