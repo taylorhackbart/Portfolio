@@ -3,7 +3,8 @@ import { FormBtn, TextArea } from "../../components/Form";
 import API from "../../utils/API";
 import "./home.css";
 import jumbo from "../../assets/hero-bg.jpg";
-import step1 from "../../assets/step-1.svg";
+import giftr from "../../assets/giftr.png"
+import auth from "../../assets/auth.png";
 import step2 from "../../assets/step-2.svg";
 import step3 from "../../assets/step-3.svg";
 import step4 from "../../assets/step-4.svg";
@@ -160,35 +161,36 @@ function HomePage() {
         </div>
 
         <div className="step">
-          <h3>Step 1.</h3>
+          {/* <h3>Step 1.</h3> */}
           <div className="step-info">
             <div className="step-img">
-              <img src={step1} alt="" />
+             <a href="https://giftr-registry.herokuapp.com/"><img src={giftr} alt="" /> </a>
             </div>
             <div className="step-text">
-              <h4>Fill Out The Form Above</h4>
-              <p>You're already here, so why not?</p>
+              <h4>GIFTR</h4>
+              <p>This application allows users to create registries for every occasion! Click on the image to test it out, or view my repository <a href="https://github.com/taylorhackbart/registry"> here</a>!</p>
             </div>
           </div>
         </div>
 
         <div className="step">
-          <h3>Step 2.</h3>
+          {/* <h3>Step 2.</h3> */}
           <div className="step-info">
             <div className="step-img">
-              <img src={step2} alt="" />
+            <a href="https://auth-template.herokuapp.com/" > <img src={auth} alt="" />
+            </a>
             </div>
             <div className="step-text">
-              <h4>Consult with One of Our Trainers.</h4>
+              <h4>MERN Authentication</h4>
               <p>
-                Are you here to build muscle, lose weight, or just feel good?
+                This application is a bare bones template for user authentication. This authentication template pushes users info directly into a DB collection created by the site owner rather than using a third party authentication DB portal (Auth0, Firebase, etc.). This allows easy access to all data for the site owner. Click <a href="https://github.com/taylorhackbart/MERN-AUTH">here</a> for access to my repository, or click on the image to test it out!
               </p>
             </div>
           </div>
         </div>
 
         <div className="step">
-          <h3>Step 3.</h3>
+          {/* <h3>Step 3.</h3> */}
           <div className="step-info">
             <div className="step-img">
               <img src={step3} alt="" />
@@ -204,7 +206,7 @@ function HomePage() {
         </div>
 
         <div className="step">
-          <h3>Step 4.</h3>
+          {/* <h3>Step 4.</h3> */}
           <div className="step-info">
             <div className="step-img">
               <img src={step4} alt="" />
