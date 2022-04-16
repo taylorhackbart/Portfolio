@@ -1,27 +1,24 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.6fc08f6a.chunk.css",
-    "main.js": "/Portfolio/static/js/main.7579c037.chunk.js",
-    "main.js.map": "/Portfolio/static/js/main.7579c037.chunk.js.map",
+    "main.css": "/Portfolio/static/css/main.56e26412.chunk.css",
+    "main.js": "/Portfolio/static/js/main.a201b2f3.chunk.js",
+    "main.js.map": "/Portfolio/static/js/main.a201b2f3.chunk.js.map",
     "runtime-main.js": "/Portfolio/static/js/runtime-main.a210408b.js",
     "runtime-main.js.map": "/Portfolio/static/js/runtime-main.a210408b.js.map",
-    "static/js/2.bdc95ba9.chunk.js": "/Portfolio/static/js/2.bdc95ba9.chunk.js",
-    "static/js/2.bdc95ba9.chunk.js.map": "/Portfolio/static/js/2.bdc95ba9.chunk.js.map",
+    "static/js/2.8dc6c007.chunk.js": "/Portfolio/static/js/2.8dc6c007.chunk.js",
+    "static/js/2.8dc6c007.chunk.js.map": "/Portfolio/static/js/2.8dc6c007.chunk.js.map",
     "index.html": "/Portfolio/index.html",
-    "static/css/main.6fc08f6a.chunk.css.map": "/Portfolio/static/css/main.6fc08f6a.chunk.css.map",
-    "static/js/2.bdc95ba9.chunk.js.LICENSE.txt": "/Portfolio/static/js/2.bdc95ba9.chunk.js.LICENSE.txt",
+    "static/css/main.56e26412.chunk.css.map": "/Portfolio/static/css/main.56e26412.chunk.css.map",
+    "static/js/2.8dc6c007.chunk.js.LICENSE.txt": "/Portfolio/static/js/2.8dc6c007.chunk.js.LICENSE.txt",
+    "static/media/giftr.1fbc6ca6.png": "/Portfolio/static/media/giftr.1fbc6ca6.png",
     "static/media/github.a7cf1656.png": "/Portfolio/static/media/github.a7cf1656.png",
     "static/media/home.css": "/Portfolio/static/media/hero-bg.792641cc.jpg",
-    "static/media/instagram-logo.b33904f0.png": "/Portfolio/static/media/instagram-logo.b33904f0.png",
-    "static/media/step-1.ee5757bf.svg": "/Portfolio/static/media/step-1.ee5757bf.svg",
-    "static/media/step-2.8d119e4e.svg": "/Portfolio/static/media/step-2.8d119e4e.svg",
-    "static/media/step-3.b310eb97.svg": "/Portfolio/static/media/step-3.b310eb97.svg",
-    "static/media/step-4.f2714ab3.svg": "/Portfolio/static/media/step-4.f2714ab3.svg"
+    "static/media/instagram-logo.b33904f0.png": "/Portfolio/static/media/instagram-logo.b33904f0.png"
   },
   "entrypoints": [
     "static/js/runtime-main.a210408b.js",
-    "static/js/2.bdc95ba9.chunk.js",
-    "static/css/main.6fc08f6a.chunk.css",
-    "static/js/main.7579c037.chunk.js"
+    "static/js/2.8dc6c007.chunk.js",
+    "static/css/main.56e26412.chunk.css",
+    "static/js/main.a201b2f3.chunk.js"
   ]
 }
