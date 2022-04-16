@@ -189,6 +189,11 @@ section {
   font-size: 20px;
   text-align: center;
 }
+.intro .flex-row{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1rem;
+}
 /* WHAT YOU DO STYLES END */
 
 
